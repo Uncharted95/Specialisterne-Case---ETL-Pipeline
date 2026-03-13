@@ -11,7 +11,7 @@ class CRUD:
 
 
     #NB: The create method currently doesn't work as is
-    def create(self, table_name: str, row: dict, commit:bool = True, close:bool = True):
+    def create_row(self, table_name: str, row: dict, commit:bool = True, close:bool = True):
         """This method handles creating new rows in tables of the database.
         row must be a dictionary, with keys being column names and values being, well... values.
         The close argument decides whether to close the connection after running the method. By default, it is true
@@ -42,7 +42,7 @@ class CRUD:
         self.db.execute(query, row, commit=commit, close=close)
 
 
-    def create_mult(self,table_name:str, rows: list[dict], commit:bool = True, close:bool = True):
+    def create_mult_rows(self,table_name:str, rows: list[dict], commit:bool = True, close:bool = True):
         """This method handles creating multiple new rows in a designated table of the database.
         rows must be a list of dictionaries, with keys being column names and values being, well... values.
         The close argument decides whether to close the connection after running the method. By default, it is true

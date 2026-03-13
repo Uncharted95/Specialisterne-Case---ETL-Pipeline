@@ -11,7 +11,7 @@ class DMIDataTransformer:
             "observed_at": feature["properties"]["observed"],
             "pulled_at": pull_time,
             "station_id": feature["properties"]["stationId"]
-        } for feature in data["features"]]
+        } for feature in data]
         return filtered_data
 
 

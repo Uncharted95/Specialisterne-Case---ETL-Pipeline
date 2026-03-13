@@ -59,7 +59,7 @@ if __name__ == "__main__":
     token = "pZdnVxD2V8kyR2o2EyJLqdNXzfct1vFc-Y7pnrIh6_k"
     header = {"Authorization": f"BEARER {token}"}
     params = {
-        "limit": 5000,  # max number of records to fetch
+        "limit": 10,  # max number of records to fetch
         "from": f"2026-03-01T00:00:00Z"  # optional start timestamp
     }
     response = requests.get(base_url, headers=header, params=params)
@@ -69,3 +69,4 @@ if __name__ == "__main__":
             print(record)
     else:
         print("Error:", response.status_code, response.text)
+    print(data)
