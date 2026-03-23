@@ -146,7 +146,7 @@ LOCAL_DB=your_local_db_name           # Local PostgreSQL database name
 The rest of the setup depends on whether you are running in Docker or with a local database. 
 
 If running in Docker:
-1. Download compose.yaml and Dockerfile. Place them next to main.py.
+1. Download compose.yaml and Dockerfile. Place them next to the app folder and .env.
 2. Now go to .env and specify a Docker username, password and database name of your choice. See environment variables above.
 3. If you want the program to pull data only once, change ETL_mode to 'once' in .env.
 
@@ -163,7 +163,7 @@ Then simply add this to the JSON file.
 
 If running in Docker:
 1. Open docker desktop
-2. Navigate to the folder containing compose.yaml, Dockerfile and main.py in terminal 
+2. Navigate to the folder containing compose.yaml, Dockerfile and the app folder in terminal 
 3. On first run, run the following. 
 ```
 docker compose up --build
@@ -174,11 +174,11 @@ docker compose up -d
 ```
 4. Now that the database is set up, you connect to the PostgreSQL server by running
 ```
-docker exec -it specialisternecase-etlpipeline-db-1 psql -U weather_app -d weather_db
+docker exec -it specialisternecase-etlpipeline-db-1 psql -U your_db_user_here -d your_db_name_here
 ```
 You can then run SQL queries in the command line. Example:
 ```
-SELECT * FROM "DMI"
+SELECT * FROM "DMI";
 ```
 To get a summary of the tables in the database, write
 ```
