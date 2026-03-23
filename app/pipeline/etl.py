@@ -34,7 +34,7 @@ class ETLProcess:
         times_dict = self.get_start_times()
 
         # This handles the old specialisterne etl
-        self.spec_etl(from_time=times_dict["spec"])
+        # self.spec_etl(from_time=times_dict["spec"])
 
         # The rest handles the dmi etl
         stations_file = "station_ids.json"
@@ -56,7 +56,7 @@ class ETLProcess:
                 self.dmi_etl(stations[station], parameterId, from_time=times_dict["DMI"][parameterId])
 
         times_dict = self.get_start_times()
-        self.new_spec_etl(from_time=times_dict["spec"])
+        #self.new_spec_etl(from_time=times_dict["spec"])
 
 
     def dmi_etl(self, station_id, parameter_id, from_time: str = "2026-03-09T00:00:00Z", max_pulls: int = None,
