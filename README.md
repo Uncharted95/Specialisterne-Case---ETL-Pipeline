@@ -146,7 +146,7 @@ LOCAL_DB=your_local_db_name           # Local PostgreSQL database name
 The rest of the setup depends on whether you are running in Docker or with a local database. 
 
 If running in Docker:
-1. Download compose.yaml and Dockerfile. Place them next to main.py.
+1. Download compose.yaml and Dockerfile. Place them next to the app folder and .env.
 2. Now go to .env and specify a Docker username, password and database name of your choice. See environment variables above.
 3. If you want the program to pull data only once, change ETL_mode to 'once' in .env.
 
@@ -163,7 +163,7 @@ Then simply add this to the JSON file.
 
 If running in Docker:
 1. Open docker desktop
-2. Navigate to the folder containing compose.yaml, Dockerfile and main.py in terminal 
+2. Navigate to the folder containing compose.yaml, Dockerfile and the app folder in terminal 
 3. On first run, run the following. 
 ```
 docker compose up --build
