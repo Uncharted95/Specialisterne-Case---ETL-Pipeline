@@ -7,3 +7,5 @@ app = FastAPI()
 @app.get("/")
 def root():
     return {"message": "Hello from FastAPI!"}
+
+
