@@ -7,7 +7,16 @@ services:
           condition: service_healthy
     env_file:
       - .env
-
+  api:
+    build: .
+    command: uvicorn app.api:app --host 0.0.0.0 --port 8000 --reload
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
   db:
     image: postgres:16
     environment:
